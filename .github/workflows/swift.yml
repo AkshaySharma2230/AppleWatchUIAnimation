@@ -16,7 +16,7 @@ jobs:
     - name: Force Xcode 13.2.1
       run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
     - name: Build
-      run: swift build -v
+      run: xcodebuild clean test -project "AppleWatchUIAnimation.xcproject" -scheme "AppleWatchUIAnimation" -destination "platform=iOS Simulator,name=iPhone 12 Pro,OS=latest" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
     - name: Run tests
       run: swift test -v
 env:
